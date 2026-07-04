@@ -1,0 +1,69 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background-color: #F6F1E7;
+  color: #243238;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: #E3B655;
+  color: #243238;
+}
+
+/* Scroll container with snap */
+.snap-container {
+  height: 100vh;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+}
+
+.snap-section {
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+}
+
+/* Slim, calm scrollbar */
+.snap-container::-webkit-scrollbar {
+  width: 6px;
+}
+.snap-container::-webkit-scrollbar-track {
+  background: transparent;
+}
+.snap-container::-webkit-scrollbar-thumb {
+  background: rgba(89, 105, 111, 0.25);
+  border-radius: 999px;
+}
+
+/* Visible keyboard focus for accessibility */
+:focus-visible {
+  outline: 2px solid #3E6E8E;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.text-balance {
+  text-wrap: balance;
+}
